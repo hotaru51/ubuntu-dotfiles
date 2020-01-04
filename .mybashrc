@@ -4,11 +4,16 @@ if [ -f /usr/bin/nvim ]; then
   alias vim=nvim
 fi
 
+# ssh config hosts
+ssh-hosts() {
+  grep -r -E '^[Hh]ost\s' ~/.ssh | awk '{print $NF}' | sed -e '/^\*$/d'
+}
+
 # set umask
 umask 0002
 
 # set PS1
-export PS1='[\u@\h \W$(__git_ps1)]\$ '
+export PS1='[\u@\h \W]$(__git_ps1) \$ '
 
 # anyenv
 PATH="${HOME}/.anyenv/bin:$PATH"
