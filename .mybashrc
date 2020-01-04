@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # set command alias
 if [ -f /usr/bin/nvim ]; then
     alias vi=nvim
