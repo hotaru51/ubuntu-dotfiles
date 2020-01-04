@@ -1,12 +1,12 @@
 # set command alias
 if [ -f /usr/bin/nvim ]; then
-  alias vi=nvim
-  alias vim=nvim
+    alias vi=nvim
+    alias vim=nvim
 fi
 
 # ssh config hosts
 ssh-hosts() {
-  grep -r -E '^[Hh]ost\s' ~/.ssh | awk '{print $NF}' | sed -e '/^\*$/d'
+    grep -r -E '^[Hh]ost\s' ~/.ssh | awk '{print $NF}' | sed -e '/^\*$/d'
 }
 
 # set umask
