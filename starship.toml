@@ -1,0 +1,35 @@
+[character]
+success_symbol = '[❯](bold red)[❯](bold yellow)[❯](bold green)'
+error_symbol = '[❯❯❯](bold red)'
+vicmd_symbol = '[❯❯❯](bold green)'
+
+[username]
+show_always = true
+format = '[$user]($style)@'
+style_user = "blue bold"
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style) '
+style = "blue bold"
+
+[time]
+disabled = false
+format = '[\[$time\]]($style) '
+style = "bold 243"
+
+[git_status]
+deleted = '✘ '
+
+[aws]
+format = 'on [$symbol($profile )]($style)'
+symbol = ''
+style = 'bold 208'
+
+[gcloud]
+format = 'on [$symbol$account(@$domain)]($style) '
+symbol = ''
+style = 'bold 27'
+
+[package]
+disabled = true
