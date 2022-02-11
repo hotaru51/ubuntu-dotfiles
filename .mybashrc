@@ -27,6 +27,23 @@ ssh-hosts() {
     fi
 }
 
+# fssh
+function fssh() {
+    if [ ! -f "$(which fzf)" ]; then
+        return 1
+    fi
+
+    if [ "$#" -ge 1 ]; then
+        local ssh_hostname="$(ssh-hosts "${1}" | fzf)"
+    else
+        local ssh_hostname="$(ssh-hosts | fzf)"
+    fi
+
+    if [ -n "${ssh_hostname}" ]; then
+        ssh "${ssh_hostname}"
+    fi
+}
+
 # AWS CLI
 if [ -f "$(which aws_completer)" ]; then
     complete -C "$(which aws_completer)" aws
